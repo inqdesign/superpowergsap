@@ -1,16 +1,4 @@
 
-<style>
-.heading {
-	visibility: hidden
-}
-.photo_item {
-	visibility: hidden
-}
-
-</style>
-
-
-
 // Global variables
 const locomotiveScroll = new LocomotiveScroll();  
 const preloader = document.querySelector(".preloader");
