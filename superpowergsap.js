@@ -1,6 +1,5 @@
 
 
-<script>
 gsap.from(".photo_item", {
   scale: 0,
   opacity: 0,
@@ -610,7 +609,5 @@ $(".photo_item:nth-child(4n+4)").each(function (index) {
     delete e.default;
   }
 });
-
-  </script>
 
 
