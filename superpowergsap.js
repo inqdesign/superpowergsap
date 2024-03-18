@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Splits text into words and characters
   const text = new SplitType(".heading", { types: "chars" });
 
-
            
   // Page Load Animation
   const initialAnimation = gsap.from(text.chars, {
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Grid fadein
-  gsap.from(".photo_item", ".card-collection", {
+  gsap.from(".photo_item", {
     scale: 0,
     opacity: 0,
     duration: 1,
@@ -31,6 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
       y: "2rem",
     },
   });
+
+  gsap.from(".card-collection", {
+  scale: 0,
+  opacity: 0,
+  duration: 1,
+  ease: "power1.out",
+  stagger: {
+    amount: 0.5,
+    from: "random",
+    ease: "power1.out",
+    y: "2rem",
+  },
+});
+  
   
   // User Scroll Animation
   function activateScrollTrigger() {
