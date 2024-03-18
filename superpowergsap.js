@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
-
+  gsap.set(".heading", { autoAlpha: 1 }); // prevents flash of unstyled content
+  gsap.set(".photo_item", { autoAlpha: 1 });
+  gsap.set(".card-collection, { autoAlpha: 1 });
+           
   // Splits text into words and characters
   const text = new SplitType(".heading", { types: "chars" });
 
-  gsap.set(".heading", { autoAlpha: 1 }); // prevents flash of unstyled content
-  gsap.set(".photo_item", { autoAlpha: 1 });
+
+           
   // Page Load Animation
   const initialAnimation = gsap.from(text.chars, {
     autoAlpha: 0,
@@ -15,19 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     onComplete: activateScrollTrigger, // Activate ScrollTrigger after initial animation
   });
 
-// Grid fadein
-gsap.from(".photo_item", {
-  scale: 0,
-  opacity: 0,
-  duration: 1,
-  ease: "power1.out",
-  stagger: {
-    amount: 0.5,
-    from: "random",
+  // Grid fadein
+  gsap.from(".photo_item", ".card-collection", {
+    scale: 0,
+    opacity: 0,
+    duration: 1,
     ease: "power1.out",
-    y: "2rem",
-  },
-});
+    stagger: {
+      amount: 0.5,
+      from: "random",
+      ease: "power1.out",
+      y: "2rem",
+    },
+  });
   
   // User Scroll Animation
   function activateScrollTrigger() {
