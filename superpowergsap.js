@@ -1,16 +1,3 @@
-gsap.from(".photo_item", {
-  scale: 0,
-  opacity: 0,
-  duration: 1,
-  ease: "power1.out",
-  stagger: {
-    amount: 0.5,
-    from: "random",
-    ease: "power1.out",
-    y: "2rem",
-  },
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     onComplete: activateScrollTrigger, // Activate ScrollTrigger after initial animation
   });
 
+// Grid fadein
+gsap.from(".photo_item", {
+  scale: 0,
+  opacity: 0,
+  duration: 1,
+  ease: "power1.out",
+  stagger: {
+    amount: 0.5,
+    from: "random",
+    ease: "power1.out",
+    y: "2rem",
+  },
+});
+  
   // User Scroll Animation
   function activateScrollTrigger() {
     gsap.to(text.chars, {
