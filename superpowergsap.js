@@ -32,17 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  gsap.from(".card-collection", {
-    scale: 1,
-    opacity: 0,
-    duration: 1,
-    ease: "power1.out",
-    stagger: {
-      amount: 0.5,
-      from: "left",
-      ease: "power1.out",
-    },
-  });
+
   
   
   // User Scroll Animation
