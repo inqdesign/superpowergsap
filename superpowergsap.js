@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.from(".card-collection", {
   opacity: 0,
+  scale: 1,
   duration: 1,
   ease: "power1.out",
   stagger: {
