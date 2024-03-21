@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.set(".heading", { autoAlpha: 1 }); // prevents flash of unstyled content
   gsap.set(".photo_item", { autoAlpha: 1 });
-  gsap.set(".card-collecdtion", { autoAlpha: 1 });
 
            
   // Splits text into words and characters
