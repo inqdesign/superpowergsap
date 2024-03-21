@@ -32,6 +32,86 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+// Grid item move 1
+$(".photo_item:nth-child(4n+1)").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(this);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+  tl.to(targetElement, {
+    y: "0%",
+    duration: 1,
+  });
+});
+
+// Grid item move 2
+$(".photo_item:nth-child(4n+2)").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(this);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+  tl.to(targetElement, {
+    y: "-5%",
+    duration: 1,
+  });
+});
+
+// Grid item move 3
+$(".photo_item:nth-child(4n+3)").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(this);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+  tl.to(targetElement, {
+    y: "-15%",
+    duration: 1,
+  });
+});
+
+// Grid item move 4
+$(".photo_item:nth-child(4n+4)").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(this);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+  tl.to(targetElement, {
+    y: "-20%",
+    duration: 1,
+  });
+});
+
   
   
   // User Scroll Animation
