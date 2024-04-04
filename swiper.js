@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper.is-main-slider', {
+const swiper = new Swiper('.swiper', {
   slidesPreView: 1,
   speed: 400,
   spaceBetween: 100,
