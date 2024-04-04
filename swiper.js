@@ -1,5 +1,5 @@
 const swiper = new Swiper('.swiper.is-main-slider', {
-  slidesPreView: 4,
+  slidesPreView: 1,
   speed: 400,
   spaceBetween: 100,
 });
