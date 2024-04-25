@@ -2,19 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Function to animate text characters
-    function animateText(selector, delay) {
+    function animateText(selector, delay, duration) {
         const text = new SplitType(selector, { types: "chars" });
         gsap.set(selector, { autoAlpha: 1 }); // Prevents flash of unstyled content
         gsap.set(text.chars, { yPercent: 100 }); // Set initial state
-
-        // Calculate total animation duration based on the number of characters
-        const totalDuration = text.chars.length * 0.05;
 
         // Animation for the text
         const animation = gsap.to(text.chars, {
             yPercent: 0,
             delay: delay,
-            duration: totalDuration, // Set the duration based on the number of characters
+            duration: duration, // Set the duration manually
             ease: "sine.out",
             stagger: { from: "center", amount: 0.5, ease: "power1.out" },
             onComplete: () => {
@@ -53,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Animation for the first heading
-    const firstHeadingAnimation = animateText("#heading1", 5.5);
+    // Animation for the first heading (faster animation)
+    const firstHeadingAnimation = animateText("#heading1", 5.5, 2); // Manually set duration to 2 seconds
 
     // Animation for the second heading with a delay of 1 second
-    const secondHeadingAnimation = animateText("#heading2", 6.5);
+    const secondHeadingAnimation = animateText("#heading2", 6.5, "auto"); // Let the duration be automatically calculated based on characters
 
     // Combine the timelines to play them in sequence
     const combinedTimeline = gsap.timeline();
