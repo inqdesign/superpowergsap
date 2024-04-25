@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Animation for the first heading (faster animation)
-    const firstHeadingAnimation = animateText("#heading1", 5.5, 0.5); // Manually set duration to 2 seconds
+    const firstHeadingAnimation = animateText("#heading1", 5.5, 0.01); // Manually set duration to 2 seconds
 
     // Animation for the second heading with a delay of 1 second
     const secondHeadingAnimation = animateText("#heading2", 6.5, "auto"); // Let the duration be automatically calculated based on characters
