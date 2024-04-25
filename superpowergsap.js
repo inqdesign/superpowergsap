@@ -7,12 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(selector, { autoAlpha: 1 }); // Prevents flash of unstyled content
         gsap.set(text.chars, { yPercent: 100 }); // Set initial state
 
+        // Calculate total animation duration based on the number of characters
+        const totalDuration = text.chars.length * 0.05;
+
         // Animation for the text
         const animation = gsap.to(text.chars, {
             yPercent: 0,
             delay: delay,
+            duration: totalDuration, // Set the duration based on the number of characters
             ease: "sine.out",
-            stagger: { from: "left", amount: 0.5, ease: "power1.out" },
+            stagger: { from: "center", amount: 0.5, ease: "power1.out" },
             onComplete: () => {
                 // Activate ScrollTrigger after the animation completes
                 activateScrollTrigger(selector);
@@ -42,18 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const digitalText = new SplitType(".digital-text", { types: "chars" });
         const tl = gsap.timeline();
         tl.from(digitalText.chars, {
-            delay: 1.5,
+            delay: 3.5,
             opacity: 0,
-            duration: 0.5,
-            stagger: { each: 0.005, from: "random" }
+            duration: 1.5,
+            stagger: { each: 0.05, from: "random" }
         });
     };
 
     // Animation for the first heading
-    const firstHeadingAnimation = animateText("#heading1", 3);
+    const firstHeadingAnimation = animateText("#heading1", 5.5);
 
-    // Animation for the second heading with a delay of 
-    const secondHeadingAnimation = animateText("#heading2", 0.5);
+    // Animation for the second heading with a delay of 1 second
+    const secondHeadingAnimation = animateText("#heading2", 6.5);
 
     // Combine the timelines to play them in sequence
     const combinedTimeline = gsap.timeline();
