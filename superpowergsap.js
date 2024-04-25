@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Animation for the first heading (faster animation)
-    const firstHeadingAnimation = animateText("#heading1", 5.5, 0.2); // Set duration to 1 second for faster animation
+    const firstHeadingAnimation = animateText("#heading1", 1.5, 0.2); // Set duration to 1 second for faster animation
 
     // Animation for the second heading with a delay of 1 second
-    const secondHeadingAnimation = animateText("#heading2", 6.5, "auto"); // Let the duration be automatically calculated based on characters
+    const secondHeadingAnimation = animateText("#heading2", 1.5, "auto"); // Let the duration be automatically calculated based on characters
 
     // Combine the timelines to play them in sequence
     const combinedTimeline = gsap.timeline();
